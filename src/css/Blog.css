@@ -1,0 +1,10 @@
+.card-BG{
+    padding: 150px 0;
+    background: rgb(61,61,61);
+background: linear-gradient(0deg, rgba(61,61,61,1) 26%, rgba(15,15,15,1) 100%);
+}
+
+.blog-title{
+    font-size: 50px;
+}
+

@@ -1,0 +1,43 @@
+.intro-title {
+    font-size: 50px;
+}
+
+.menu-titlecolor {
+    color: #E5D5F1;
+}
+
+.menu-scan {
+    font-size: 20px;
+}
+
+.menu-scancolor {
+    color: #FFFFFF;
+}
+
+.stat-intro {
+    font-size: 60px;
+}
+
+.stat-color {
+    color: #7D4F9E;
+}
+
+.BG-intro {
+    background: rgb(61, 61, 61);
+    background: linear-gradient(0deg, rgba(61, 61, 61, 1) 22%, rgba(15, 15, 15, 1) 100%);
+    background-size: 1980px 670px;
+    background-repeat: no-repeat;
+}
+
+.hr-intro{
+    height : 4px;
+    width : 50%;
+    border-width: 0;
+    color: 'BlueViolet' ;
+    background-color: 'BlueViolet' ;
+}
+
+.BG-hr {
+    background-image: url("https://cdn.discordapp.com/attachments/698891272748007526/935997620990648340/hr-vertical.png");
+    background-repeat: no-repeat;
+}

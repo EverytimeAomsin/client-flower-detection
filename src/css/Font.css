@@ -1,0 +1,49 @@
+@font-face{
+	font-family: 'Kanit-Light';
+	src: local('Kanit-Light'),
+	url('../font/Kanit-Light.woff') format('woff')
+}
+
+@font-face{
+	font-family: 'Kanit-Regular';
+	src: local('Kanit-Regular'),
+	url('../font/Kanit-Regular.woff') format('woff')
+}
+
+
+@font-face{
+	font-family: 'Kanit-SemiBold';
+	src: local('Kanit-SemiBold'),
+	url('../font/Kanit-SemiBold.woff') format('woff')
+}
+
+@font-face{
+	font-family: 'SEGOEUI';
+	src: local('SEGOEUI'),
+	url('../font/SEGOEUI.woff') format('woff')
+}
+
+
+ p,.Kanit-regular{
+  font-family: Kanit-Regular;
+}
+
+h1,h2,h3,h4,h5,.Kanit-SemiBold{
+    font-family:Kanit-SemiBold;
+  }
+
+.lightfont{
+    font-family: Kanit-Light;
+  }
+
+  .SegoeUi-bold{
+	font-family: SEGOEUI;
+	font-weight: 700;
+	font-style: italic;
+  }
+
+  .Segoe-ui{
+	font-family: SEGOEUI;
+	font-weight: 300;
+	
+  }

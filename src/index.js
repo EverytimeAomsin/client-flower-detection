@@ -1,12 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import MyRoute from './MyRoute';
+import 'mdb-react-ui-kit/dist/css/mdb.min.css'
 import reportWebVitals from './reportWebVitals';
+
+import Home from "./page/home/Home"
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <MyRoute />
   </React.StrictMode>,
   document.getElementById('root')
 );
