@@ -16,9 +16,9 @@ export default function Home() {
         autoPlay={true}
         muted={true}
       />
-      <div class="vertical-center">
-        <div class="d-flex flex-row mb-3">
-          <div class="p-2 ">
+      <div className="vertical-center">
+        <div className="d-flex flex-row mb-3">
+          <div className="p-2 ">
             <h1 className='font-home SegoeUi-bold'>SCAN<br />FLOWER</h1>
             <div className='mt-5'>
               <hr style={{ height: '4px', width: '100%', borderWidth: 0, color: 'DarkGoldenRod', backgroundColor: 'DarkGoldenRod' }} />
@@ -27,11 +27,10 @@ export default function Home() {
               <MDBRow>
                 <MDBCol md='6' className='col-example d-grid gap-2'>
 
-                  
-                    <MDBBtn outline rounded className='mx-2' size='lg' color='light'>
-                      <span className='Segoe-ui home-buttom'><Link to="/intro" style={{color:'white'}}>enter </Link></span>
-                    </MDBBtn>
-                 
+                  <MDBBtn outline rounded className='mx-2' size='lg' color='light'>
+                    <span className='Segoe-ui home-buttom'><Link to="/intro" style={{ color: 'white' }}>enter </Link></span>
+                  </MDBBtn>
+
                 </MDBCol>
               </MDBRow>
 
