@@ -35,7 +35,7 @@ export default function Intro() {
           </MDBRow>
         </div>
         <div className='text-center mt-5 BG-hr'>
-          <img className='mt-5' style={{ height: '400px' }} src='./img/etc/intro.png' />
+          <img className='mt-5 height-imgintro'  src='./img/etc/intro.png' />
         </div>
         <div className='mt-5'>
           <MDBRow className='text-center'>
@@ -64,60 +64,63 @@ export default function Intro() {
           <MDBCol md='3' className='col-example'>
           </MDBCol>
           <MDBCol md='5' className='col-example'>
-            <MDBInput style={{ width: '500px' }} size='lg' label='ค้นหา >>' id='form1' type='text' />
+            <MDBInput style={{ width: '500px' }} className='mt-5' size='lg' label='ค้นหา >>' id='form1' type='text' />
+            <div id='textExample1' className='form-text'>
+        ช่องค้นหา คุณสามารถค้นหาสิ่งที่คุณต้องการได้
+      </div>
           </MDBCol>
         </MDBRow>
 
         <div>
         <MDBRow className='mt-4'>
           <h3 className='Kanit-regular'>หัวข้อที่อาจสนใจ</h3>
-        <MDBCol md='3' className='col-example d-grid gap-2'>
-        <MDBBtn size='lg' outline className='mx-2' color='dark'>
-        Dark
+        <MDBCol md='3' className='col-example d-grid gap-2 '>
+        <MDBBtn size='lg' outline className='mx-2 ' color='dark'>
+        สีแดง
       </MDBBtn>
         </MDBCol>
-        <MDBCol md='3' className='col-example d-grid gap-2'>
+        <MDBCol md='3' className='col-example d-grid gap-2 mt-tag'>
         <MDBBtn size='lg' outline className='mx-2' color='dark'>
-        Dark
+        สีเหลือง
       </MDBBtn>
         </MDBCol>
-        <MDBCol md='3' className='col-example d-grid gap-2'>
+        <MDBCol md='3' className='col-example d-grid gap-2 mt-tag'>
         <MDBBtn size='lg' outline className='mx-2' color='dark'>
-        Dark
+        สีส้ม
       </MDBBtn>
         </MDBCol>
-        <MDBCol md='3' className='col-example d-grid gap-2'>
+        <MDBCol md='3' className='col-example d-grid gap-2 mt-tag'>
         <MDBBtn size='lg' outline className='mx-2' color='dark'>
-        Dark
+        สีชมพู
       </MDBBtn>
         </MDBCol>
       </MDBRow>
       <MDBRow className='mt-2'>
-        <MDBCol md='3' className='col-example d-grid gap-2'>
+        <MDBCol md='3' className='col-example d-grid gap-2 mt-tag'>
         <MDBBtn size='lg' outline className='mx-2' color='dark'>
-        Dark
+        สีม่วง
       </MDBBtn>
         </MDBCol>
-        <MDBCol md='3' className='col-example d-grid gap-2'>
+        <MDBCol md='3' className='col-example d-grid gap-2 mt-tag'>
         <MDBBtn size='lg' outline className='mx-2' color='dark'>
-        Dark
+         สีขาว
       </MDBBtn>
         </MDBCol>
-        <MDBCol md='3' className='col-example d-grid gap-2'>
+        <MDBCol md='3' className='col-example d-grid gap-2 mt-tag'>
         <MDBBtn size='lg' outline className='mx-2' color='dark'>
-        Dark
+        ไม้ประดับ 
       </MDBBtn>
         </MDBCol>
-        <MDBCol md='3' className='col-example d-grid gap-2'>
+        <MDBCol md='3' className='col-example d-grid gap-2 mt-tag'>
         <MDBBtn size='lg' outline className='mx-2 ' color='dark'>
-        Dark
+        ไม้ดอก
       </MDBBtn>
         </MDBCol>
       </MDBRow>
       </div>
 
         <div className='mt-4'>
-          <MDBRow className='row-cols-1 row-cols-md-3 g-4'>
+          <MDBRow className='row-cols-1 row-cols-md-3 g-4 '>
             <MDBCol>
               <MDBCard>
               <MDBRipple rippleColor='light' rippleTag='div' className='bg-image hover-overlay hover-zoom'>
@@ -144,7 +147,7 @@ export default function Intro() {
             <MDBCol>
               <MDBCard>
                 <MDBCardImage
-                  src='https://cdn.discordapp.com/attachments/556546837247426635/937094023007567882/unknown.png'
+                  src='https://cdn.discordapp.com/attachments/556546837247426635/937120637217042442/unknown.png'
                   alt='...'
                   position='top'
                 />

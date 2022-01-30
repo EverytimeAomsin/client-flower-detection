@@ -24,7 +24,9 @@ export default function Blog() {
         <MDBRow>
 
           <MDBCol md='2' className='col-example'>
-            <div className="fixed-top sidebar">  <Link to="/intro"><img style={{ height: '50px' }} src='https://cdn.discordapp.com/attachments/556546837247426635/937082320966529095/Logo1.png' /></Link></div>
+            <div className="fixed-top sidebar">  <Link to="/intro"><img style={{ height: '50px' }} src='https://cdn.discordapp.com/attachments/556546837247426635/937082320966529095/Logo1.png' />
+            </Link></div>
+            <img className='img-logoblog' style={{ height: '50px' }} src='https://cdn.discordapp.com/attachments/556546837247426635/937082320966529095/Logo1.png' />
           </MDBCol>
           <MDBCol md='8' className='col-example'>
             <div className='d-flex justify-content-center margin-imgblog'>

@@ -1,25 +1,39 @@
 .vertical-center {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-  }
-
-  .BG-home {
-    background: rgb(61, 61, 61);
-    background: linear-gradient(0deg, rgba(61, 61, 61, 1) 22%, rgba(15, 15, 15, 1) 100%);
-    background-size: 1980px 670px;
-    background-repeat: no-repeat;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
-.font-home{
-    font-size: 800% ;
-    color: #F0F4CF;
+
+
+.font-home {
+  font-size: 800%;
+  color: #F0F4CF;
 }
 
-.home-buttom{
+.home-buttom {
   font-size: 150%;
 }
 
+@media only screen and (max-width: 992px) {
+  .font-home {
+    font-size: 100px;
+    color: #F0F4CF;
+  }
+}
 
+@media only screen and (max-width: 600px) {
+  .font-home{
+    font-size: 80px ;
+    color: #F0F4CF;
+}
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 40%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+}

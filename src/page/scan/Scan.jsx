@@ -1,5 +1,6 @@
 import React from 'react';
-import { MDBContainer, MDBInput, MDBRow, MDBCol, MDBCard, MDBCardBody, MDBCardTitle, MDBCardImage, MDBCardHeader, MDBCardFooter, MDBCardText } from 'mdb-react-ui-kit';
+import { MDBContainer, MDBInput, MDBRow, MDBCol, MDBCard, MDBCardBody, MDBCardTitle, MDBCardImage, MDBCardText } from 'mdb-react-ui-kit';
+import { Link } from "react-router-dom";
 import '../../css/Scan.css'
 
 function Scan() {
@@ -8,17 +9,18 @@ function Scan() {
       <MDBContainer fluid className='BG-intro'>
         <MDBContainer>
           <div className="d-inline-flex p-2  mt-5 " >
-            <img style={{ height: '50px' }} src='./img/etc/Logo1.png' />
+          <Link to="/intro"> <img style={{ height: '50px' }} src='./img/etc/Logo1.png' /></Link>
           </div>
           <div className='search-margin'>
-            <MDBInput label='กรอกหรือวางได้ลิ้งที่นี่' id='typeText' type='text' size='lg' contrast />
+            <h3 className='text-center text-light'>ใส่ลิ้งรูปภาพ</h3>
+            <MDBInput label='กรอกหรือวางได้ลิ้งที่นี่' id='typeText' type='url' size='lg' contrast />
           </div>
           <div className='search-img'>
             <MDBRow className='mb-3'>
-              <MDBCol size='5' className='col-example text-center'>
+              <MDBCol md='5' className='col-example text-center'>
 
 
-                <MDBCard className='mb-3'>
+                <MDBCard className='mb-3' >
                   <MDBCardBody>
                     <MDBCardTitle><h4 className='Kanit-regular'>ภาพตัวอย่าง</h4></MDBCardTitle>
 
@@ -29,10 +31,10 @@ function Scan() {
                   <MDBCardImage position='bottom' src='https://tatapi.tourismthailand.org/tatfs/Image/CustomPOI/Picture/P03013819_1.jpeg' alt='...' />
                 </MDBCard>
               </MDBCol>
-              <MDBCol size='2' className='col-example'>
+              <MDBCol md='2' className='col-example'>
 
               </MDBCol>
-              <MDBCol size='5' className='col-example '>
+              <MDBCol md='5' className='col-example '>
                 <MDBCard>
                   <MDBCardBody>
                     <h4 className='Kanit-regular text-center'>ผลลัพธ์</h4>
@@ -42,10 +44,11 @@ function Scan() {
               </MDBCol>
             </MDBRow>
           </div>
-          <div className='prediction-margin text-center'>
-          <a href="#" className="prediction-button Kanit-regular ">สแกนอีกครั้ง</a>
-          </div>
+         
         </MDBContainer>
+        <div className='fixed-bottom  end-0 text-end'>
+          <a href='#' class='prediction-button'>สแกนอีกครั้ง</a>
+          </div>
       </MDBContainer>
     </div>
   );

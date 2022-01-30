@@ -30,6 +30,7 @@
     margin-top: 100px;
 }
 
+
 .blog-title{
     font-size: 50px;
 }
@@ -62,3 +63,37 @@
   text-decoration-color:#9B60C4;
 }
 
+.img-logoblog{
+    margin-top: -300px;
+ 
+}
+
+@media only screen and (max-width: 992px) {
+    .sidebar {
+        height: 10%;
+        width: 80px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        padding-top: 40px;
+        background-color: #262626;
+        }
+        .sidebar img{
+            transform: rotate(90deg); 
+            margin-top: 130px;
+            margin-left: -130px;
+            visibility: hidden;
+    
+  }
+  
+  @media only screen and (max-width: 600px) {
+    
+    
+   
+    }
+
+    .img-logoblog{
+        visibility: visible;
+    }
+    
+  }

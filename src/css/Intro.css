@@ -41,3 +41,17 @@
     background-image: url("https://cdn.discordapp.com/attachments/698891272748007526/935997620990648340/hr-vertical.png");
     background-repeat: no-repeat;
 }
+
+.height-imgintro{
+    height: 400px;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .height-imgintro{
+        height: 200px;
+    }
+    .mt-tag{
+    padding-top: 10px;
+    }
+  }

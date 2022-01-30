@@ -9,7 +9,7 @@ import BeeBG from '../../video/BeeBG.mp4'
 export default function Home() {
   return (
 
-    <MDBContainer className='BG-home' >
+    <MDBContainer  >
       <VideoPlayer
         className="video"
         src={BeeBG}
@@ -26,11 +26,11 @@ export default function Home() {
             <div className='mt-5 text-uppercase '>
               <MDBRow>
                 <MDBCol md='6' className='col-example d-grid gap-2'>
-
+                <Link to="/intro" >
                   <MDBBtn outline rounded className='mx-2' size='lg' color='light'>
-                    <span className='Segoe-ui home-buttom'><Link to="/intro" style={{ color: 'white' }}>enter </Link></span>
+                    <span className='Segoe-ui home-buttom 'style={{ color: 'white' }}>enter </span>
                   </MDBBtn>
-
+                  </Link>
                 </MDBCol>
               </MDBRow>
 
