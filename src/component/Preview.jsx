@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { MDBContainer, MDBBtn, MDBRow, MDBCol, MDBCard, MDBCardBody, MDBCardTitle, MDBCardImage, MDBCardText } from 'mdb-react-ui-kit';
+import { MDBRow, MDBCol, MDBCard, MDBCardBody, MDBCardTitle, MDBCardImage, MDBCardText } from 'mdb-react-ui-kit';
 import ShowPrediction from "./ShowPrediction";
 
 const Preview = ({ searchState }) => {
   const [predictedData, setPredictedData] = useState({
-    Product: "",
+    Flower: "",
     Probability: "",
   });
 
@@ -29,7 +29,7 @@ const Preview = ({ searchState }) => {
       (response) => {
         if (response.status !== 200) {
           setPredictedData({
-            Product: "Sorry I am not sure!",
+            Flower: "Sorry I am not sure!",
             Probability: 0,
           });
           console.log("Something went wrong!");
@@ -37,7 +37,7 @@ const Preview = ({ searchState }) => {
           response.json().then((data) => {
             debugger;
             setPredictedData({
-              Product: data[0].class,
+              Flower: data[0].class,
               Probability: data[0].score,
             });
           });
@@ -46,38 +46,39 @@ const Preview = ({ searchState }) => {
     );
   };
   return (
-    <>  <div className='search-img'>
-    <MDBRow className='mb-3'>
-      <MDBCol md='5' className='col-example text-center'>
+    <>
+      <div className='search-img'>
+        <MDBRow className='mb-3'>
+          <MDBCol md='5' className='col-example text-center'>
 
 
-        <MDBCard className='mb-3' >
-          <MDBCardBody>
-            <MDBCardTitle><h4 className='Kanit-regular'>ภาพตัวอย่าง</h4></MDBCardTitle>
+            <MDBCard className='mb-3' >
+              <MDBCardBody>
+                <MDBCardTitle><h4 className='Kanit-regular'>ภาพตัวอย่าง</h4></MDBCardTitle>
 
-            <MDBCardText>
+                <MDBCardText>
 
-            </MDBCardText>
-          </MDBCardBody>
-          <MDBCardImage position='bottom' src={searchState} alt='...' />
-        </MDBCard>
-      </MDBCol>
-      <MDBCol md='2' className='col-example'>
+                </MDBCardText>
+              </MDBCardBody>
+              <MDBCardImage position='bottom' src={searchState} alt='...' />
+            </MDBCard>
+          </MDBCol>
+          <MDBCol md='2' className='col-example'>
 
-      </MDBCol>
-      <MDBCol md='5' className='col-example '>
-        <MDBCard>
-          <MDBCardBody>
-        
-            <ShowPrediction predictedData={predictedData} />
-            </MDBCardBody>
-        </MDBCard>
-      </MDBCol>
-    </MDBRow>
-  </div>
-  <div className='fixed-bottom  end-0 text-end'>
-  <MDBBtn  className='prediction-button' onClick={handlePredict}>สแกนอีกครั้ง</MDBBtn>
-  </div>
+          </MDBCol>
+          <MDBCol md='5' className='col-example '>
+            <MDBCard>
+              <MDBCardBody>
+
+                <ShowPrediction predictedData={predictedData} />
+              </MDBCardBody>
+            </MDBCard>
+          </MDBCol>
+        </MDBRow>
+      </div>
+      <div className='fixed-bottom  end-0 text-end'>
+        <button className='prediction-button' onClick={handlePredict}>สแกนอีกครั้ง</button>
+      </div>
     </>
   );
 };

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { MDBContainer, MDBInput, MDBRow, MDBCol, MDBCard, MDBCardBody, MDBCardTitle, MDBCardImage, MDBCardText } from 'mdb-react-ui-kit';
+import { MDBContainer } from 'mdb-react-ui-kit';
 import { Link } from "react-router-dom";
 import '../../css/Scan.css'
 import SearchBox from '../../component/SearchBox'

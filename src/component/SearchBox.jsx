@@ -11,11 +11,11 @@ const SearchBox = ({ setSearchState }) => {
   const handleClear = function () { };
   return (
     <>
-      <h3 className='text-center text-light'>ใส่ลิ้งรูปภาพ</h3>
-      <MDBInput 
-      value={inputUrl} 
-      onChange={handleChange.bind(this)}
-      label='กรอกหรือวางได้ลิ้งที่นี่' id='typeText' type='url' size='lg' contrast />
+      <h3 className='text-center text-light'>ใส่ลิงก์รูปภาพ</h3>
+      <MDBInput
+        value={inputUrl}
+        onChange={handleChange.bind(this)}
+        label='กรอกหรือวางได้ลิงก์ที่นี่' id='typeText' type='url' size='lg' contrast />
     </>
   );
 };
