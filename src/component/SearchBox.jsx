@@ -16,6 +16,7 @@ const SearchBox = ({ setSearchState }) => {
         value={inputUrl}
         onChange={handleChange.bind(this)}
         label='กรอกหรือวางได้ลิงก์ที่นี่' id='typeText' type='url' size='lg' contrast />
+      
     </>
   );
 };
