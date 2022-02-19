@@ -5,10 +5,13 @@ import MyRoute from './MyRoute';
 import 'mdb-react-ui-kit/dist/css/mdb.min.css'
 import reportWebVitals from './reportWebVitals';
 
+import AdminBottomComponent from './component/AdminBottomComponent';
+
 import Home from "./page/home/Home"
 
 ReactDOM.render(
   <React.StrictMode>
+    <AdminBottomComponent />
     <MyRoute />
   </React.StrictMode>,
   document.getElementById('root')
