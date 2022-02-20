@@ -25,11 +25,11 @@ const Preview = ({ searchState }) => {
       mode: "cors",
     };
 
-    fetch("http://localhost:5000/image/classify", requesOptions).then(
+    fetch(`${process.env.REACT_APP_API}/image/classify`, requesOptions).then(
       (response) => {
         if (response.status !== 200) {
           setPredictedData({
-            Flower: "Sorry I am not sure!",
+            Flower: "ขออภัยไม่สามารถระบุรูปภาพได้",
             Probability: 0,
           });
           console.log("Something went wrong!");
@@ -50,7 +50,6 @@ const Preview = ({ searchState }) => {
       <div className='search-img'>
         <MDBRow className='mb-3'>
           <MDBCol md='5' className='col-example text-center'>
-
 
             <MDBCard className='mb-3' >
               <MDBCardBody>

@@ -16,9 +16,17 @@ const EditComponent=(props)=>{
     const {title,author,slug} = state
 
     const [content,setContent] = useState('')
+    const [intro, setIntro] = useState('')
+    const [properties, setProperties] = useState('')
 
-    const submitContent=(event)=>{
+    const submitIntro = (event) => {
+        setIntro(event)
+    }
+    const submitContent = (event) => {
         setContent(event)
+    }
+    const submitProperties = (event) => {
+        setProperties(event)
     }
 
     //ดึงข้อมูลบทความที่ต้องการแก้ไข
@@ -26,9 +34,11 @@ const EditComponent=(props)=>{
         axios
         .get(`${process.env.REACT_APP_API}/blog/${props.match.params.slug}`)
         .then(response=>{
-            const {title,content,author,slug} = response.data
+            const {title,intro,content,properties,author,slug} = response.data
             setState({...state,title,author,slug})
+            setIntro(intro)
             setContent(content)
+            setProperties(properties)
         })
         .catch(err=>alert(err))
         // eslint-disable-next-line
@@ -46,8 +56,28 @@ const EditComponent=(props)=>{
                 <div className="form-group">
                     <label>รายละเอียด</label>
                     <ReactQuill 
+                        value={intro}
+                        onChange={submitIntro}
+                        theme="snow"
+                        className="pb-5 mb-3"
+                        style={{border:'1px solid #666'}}
+                    />
+                </div>
+                <div className="form-group">
+                    <label>ลักษณะทั่วไป</label>
+                    <ReactQuill 
                         value={content}
                         onChange={submitContent}
+                        theme="snow"
+                        className="pb-5 mb-3"
+                        style={{border:'1px solid #666'}}
+                    />
+                </div>
+                <div className="form-group">
+                    <label>สรรพคุณ</label>
+                    <ReactQuill 
+                        value={properties}
+                        onChange={submitProperties}
                         theme="snow"
                         className="pb-5 mb-3"
                         style={{border:'1px solid #666'}}
@@ -116,6 +146,17 @@ const EditComponent=(props)=>{
                     <img className='img-logoblog' style={{ height: '50px' }} src='https://cdn.discordapp.com/attachments/556546837247426635/937082320966529095/Logo1.png' />
                 </MDBCol>
                 <MDBCol md='8' className='col-example'>
+                <div className='d-flex justify-content-center margin-imgblog'>
+                                <div>
+                                    <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZBZgpadvnLQBPqEzSM5yQ32yOUqH5tGtEFKpGIiqQ8ReSGPQHn-N8XvxAjHoZ9lBFu_g&usqp=CAU' style={{ width:'600px' }} className='img-fluid shadow-4' alt='...' />
+                                    <p class="note note-light mt-3">
+                                        <strong>Note:</strong> ไม่มีระบบ<strong> อัพรูป</strong> ให้ไปเพิ่มที่ database เอง
+                                    </p>
+                                </div>
+                                <div>
+
+                                </div>
+                            </div>
                 {showUpdateForm()}
                     <div style={{height:'40px'}}></div>
                 </MDBCol>
