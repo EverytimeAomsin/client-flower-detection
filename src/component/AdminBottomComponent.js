@@ -19,9 +19,11 @@ export default function AdminBottomComponent(history) {
 
     return (
         <div>
+             { getUser() && (
             <div className="fixed-bottom d-flex flex-row-reverse">
                 <MDBBtn onClick={toggleShow}><h5 className="Kanit-regular">เปิดเมนูแอดมิน</h5></MDBBtn>
             </div>
+            )}
 
             <MDBModal show={basicModal} setShow={setBasicModal} tabIndex='-1'>
                 <MDBModalDialog>
@@ -32,7 +34,6 @@ export default function AdminBottomComponent(history) {
                         </MDBModalHeader>
                         <MDBModalBody>
                             <div class="d-grid gap-2">
-                                
                                 <MDBBtn size='lg' href='/create'>เพิ่มบทความ &nbsp;&nbsp; &nbsp;&nbsp;<MDBIcon fas icon="pen" /></MDBBtn>
                                 <MDBBtn size='lg' color='danger'  onClick={()=>logout(()=>history.push("/"))}>ออกจากระบบ  &nbsp;&nbsp; <MDBIcon fas icon="sign-out-alt" /></MDBBtn>
                             </div>
@@ -40,6 +41,7 @@ export default function AdminBottomComponent(history) {
                     </MDBModalContent>
                 </MDBModalDialog>
             </MDBModal>
+            
         </div>
     )
 }

@@ -10,13 +10,16 @@ export default function Blog(props) {
   const [blog,setBlog] = useState('')
 
   useEffect(()=>{
+    document.title = "อ่าน "+(blog.slug)
       axios
       .get(`${process.env.REACT_APP_API}/blog/${props.match.params.slug}`)
       .then(response=>{
           setBlog(response.data)
       })
-      .catch(err=>alert(err))
+      .catch(err=>props.history.push("/404NotFound"))
+      // .catch(err=>alert(err))
       // eslint-disable-next-line
+      
   },[])
   return (
     <MDBContainer fluid className='card-BG'>

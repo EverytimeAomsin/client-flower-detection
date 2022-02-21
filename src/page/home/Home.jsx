@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import { MDBContainer, MDBRow, MDBCol, MDBBtn } from 'mdb-react-ui-kit';
 import VideoPlayer from "react-background-video-player";
 import { Link } from "react-router-dom";
@@ -7,6 +7,9 @@ import '../../css/Font.css'
 import BeeBG from '../../video/BeeBG.mp4'
 
 export default function Home() {
+  useEffect(() => {
+    document.title = "Home"
+  })
   return (
 
     <MDBContainer  >

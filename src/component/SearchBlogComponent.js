@@ -142,12 +142,14 @@ function SearchBlogComponent() {
 
                   </MDBCardText>
                 </MDBCardBody>
+                { getUser() && (
                 <MDBCardFooter background='transparent' border='success'>
                   <MDBBtnGroup shadow='0' className="d-grid gap-2">
                     <Link to={`/intro/blog/edit/${blog.slug}`} className="d-grid gap-2">  <MDBBtn size='lg' color='info'>แก้ไขบทความ</MDBBtn></Link>
                     <MDBBtn size='lg' color='danger' className="d-grid gap-2" onClick={() => confirmDelete(blog.slug)}>ลบบทความ</MDBBtn>
                   </MDBBtnGroup>
                 </MDBCardFooter >
+                 )}
               </MDBCard>
             </MDBCol>
           ))}

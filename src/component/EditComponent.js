@@ -31,6 +31,7 @@ const EditComponent=(props)=>{
 
     //ดึงข้อมูลบทความที่ต้องการแก้ไข
     useEffect(()=>{
+        document.title = "แก้ไขบทความ"
         axios
         .get(`${process.env.REACT_APP_API}/blog/${props.match.params.slug}`)
         .then(response=>{
@@ -40,7 +41,7 @@ const EditComponent=(props)=>{
             setContent(content)
             setProperties(properties)
         })
-        .catch(err=>alert(err))
+        .catch(err=>props.history.push("/404NotFound"))
         // eslint-disable-next-line
     },[])
 
