@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBInput, MDBCard, MDBCardImage, MDBCardBody, MDBCardTitle, MDBCardText,MDBRipple } from 'mdb-react-ui-kit';
+import { MDBContainer, MDBRow, MDBCol, MDBBtn} from 'mdb-react-ui-kit';
 import { Link } from "react-router-dom";
 import SearchBlogComponent from '../../component/SearchBlogComponent';
 import '../../css/Font.css'

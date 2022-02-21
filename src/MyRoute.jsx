@@ -1,5 +1,4 @@
 import {BrowserRouter , Switch,Route} from "react-router-dom"
-import App from "./App"
 import Home from "./page/home/Home"
 import Blog from "./page/blog/Blog"
 import Intro from './page/intro/Intro';

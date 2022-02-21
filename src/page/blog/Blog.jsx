@@ -4,7 +4,6 @@ import renderHTML from "react-render-html";
 import { MDBContainer, MDBRow, MDBCol,MDBBreadcrumb, MDBBreadcrumbItem, MDBNavbar} from 'mdb-react-ui-kit';
 import { Link } from "react-router-dom";
 import '../../css/Blog.css'
-import BlogComponent from '../../component/BlogComponent';
 
 export default function Blog(props) {
   const [blog,setBlog] = useState('')
