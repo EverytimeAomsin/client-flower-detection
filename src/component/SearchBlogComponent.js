@@ -10,6 +10,7 @@ function SearchBlogComponent() {
   const [getBlogs, setBlogs] = useState([])
   const [filteredBlog, setFilteredData] = useState(getBlogs);
 
+
   const fetchData = () => {
     axios
       .get(`${process.env.REACT_APP_API}/blogs`)
@@ -101,32 +102,11 @@ function SearchBlogComponent() {
             </MDBBtn>
           </MDBCol>
         </MDBRow>
-        <MDBRow className='mt-2'>
-          <MDBCol md='3' className='col-example d-grid gap-2 mt-tag'>
-            <MDBBtn size='lg' outline className='mx-2' color='dark'>
-              สีม่วง
-            </MDBBtn>
-          </MDBCol>
-          <MDBCol md='3' className='col-example d-grid gap-2 mt-tag'>
-            <MDBBtn size='lg' outline className='mx-2' color='dark'>
-              สีขาว
-            </MDBBtn>
-          </MDBCol>
-          <MDBCol md='3' className='col-example d-grid gap-2 mt-tag'>
-            <MDBBtn size='lg' outline className='mx-2' color='dark'>
-              ไม้ประดับ
-            </MDBBtn>
-          </MDBCol>
-          <MDBCol md='3' className='col-example d-grid gap-2 mt-tag'>
-            <MDBBtn size='lg' outline className='mx-2 ' color='dark'>
-              ไม้ดอก
-            </MDBBtn>
-          </MDBCol>
-        </MDBRow>
       </div>
 
       <div className='mt-4'>
         <MDBRow className='row-cols-1 row-cols-md-3 g-4 '>
+
           {filteredBlog.map((blog, index) => (
             <MDBCol>
               <MDBCard style={{ minHeight: '100%' }} border='primary' className="shadow-4">
@@ -148,14 +128,8 @@ function SearchBlogComponent() {
                       <h2>{blog.title}</h2>
                     </Link></MDBCardTitle>
                   <MDBCardText>
-                    <p>
-                      <small className='text-muted'>
-                        {/* {filteredBlog.tags.map((tag, idTag) =>
-                          <Router>
-                            <Link onMouseDown={() => setFilteredData(filteredBlog[index].tags[idTag])} onClick={handleSearch}><span >{" " + tag + ","}</span></Link>
-                          </Router>
-                        )} */}
-                      </small>
+                    
+                  <p><small className='text-muted'>Tag : {(blog.tags) + ("")}</small>
                     </p>
 
                     <div>{renderHTML(blog.content.substring(0, 250) + "...")}</div>
