@@ -1,22 +1,35 @@
 import axios from "axios"
 import { useState, useEffect } from "react"
-import { Link } from "react-router-dom"
+import { Router, Link } from "react-router-dom"
 import Swal from "sweetalert2"
 import renderHTML from "react-render-html"
 import { getUser, getToken } from "../services/authorize";
-import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBInput, MDBCard, MDBCardImage, MDBCardBody, MDBCardTitle, MDBCardText, MDBRipple, MDBCardFooter, MDBBtnGroup, MDBTabsItem, MDBTabsLink } from 'mdb-react-ui-kit';
+import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBInput, MDBCard, MDBCardImage, MDBCardBody, MDBCardTitle, MDBCardText, MDBRipple, MDBCardFooter, MDBBtnGroup } from 'mdb-react-ui-kit';
 
 function SearchBlogComponent() {
-  const [blogs, setBlogs] = useState([])
+  const [getBlogs, setBlogs] = useState([])
+  const [filteredBlog, setFilteredData] = useState(getBlogs);
 
   const fetchData = () => {
     axios
       .get(`${process.env.REACT_APP_API}/blogs`)
       .then(response => {
         setBlogs(response.data)
+        setFilteredData(response.data);
       })
       .catch(err => alert(err));
   }
+
+  const handleSearch = (event) => {
+    let value = event.target.value.toLowerCase();
+    let result = [];
+    console.log(value);
+    result = getBlogs.filter((data) => {
+      return data.title.search(value) != -1;
+    });
+    setFilteredData(result);
+  }
+
   useEffect(() => {
     fetchData()
   }, [])
@@ -57,7 +70,7 @@ function SearchBlogComponent() {
         <MDBCol md='3' className='col-example'>
         </MDBCol>
         <MDBCol md='5' className='col-example'>
-          <MDBInput style={{ width: '500px' }} className='mt-5' size='lg' label='ค้นหา >>' id='form1' type='text' />
+          <MDBInput style={{ width: '500px' }} className='mt-5 sticky-top' size='lg' label='ค้นหา >>' id='form1' type='text' onChange={(event) => handleSearch(event)} />
           <div id='textExample1' className='form-text'>
             ช่องค้นหา คุณสามารถค้นหาสิ่งที่คุณต้องการได้
           </div>
@@ -114,7 +127,7 @@ function SearchBlogComponent() {
 
       <div className='mt-4'>
         <MDBRow className='row-cols-1 row-cols-md-3 g-4 '>
-          {blogs.map((blog, index) => (
+          {filteredBlog.map((blog, index) => (
             <MDBCol>
               <MDBCard style={{ minHeight: '100%' }} border='primary' className="shadow-4">
                 <MDBRipple rippleColor='light' rippleTag='div' className='bg-image hover-overlay hover-zoom'>
@@ -135,21 +148,28 @@ function SearchBlogComponent() {
                       <h2>{blog.title}</h2>
                     </Link></MDBCardTitle>
                   <MDBCardText>
-                    <p><small className='text-muted'>Tag : {(blog.tags) + ("")}</small>
+                    <p>
+                      <small className='text-muted'>
+                        {/* {filteredBlog.tags.map((tag, idTag) =>
+                          <Router>
+                            <Link onMouseDown={() => setFilteredData(filteredBlog[index].tags[idTag])} onClick={handleSearch}><span >{" " + tag + ","}</span></Link>
+                          </Router>
+                        )} */}
+                      </small>
                     </p>
 
                     <div>{renderHTML(blog.content.substring(0, 250) + "...")}</div>
 
                   </MDBCardText>
                 </MDBCardBody>
-                { getUser() && (
-                <MDBCardFooter background='transparent' border='success'>
-                  <MDBBtnGroup shadow='0' className="d-grid gap-2">
-                    <Link to={`/intro/blog/edit/${blog.slug}`} className="d-grid gap-2">  <MDBBtn size='lg' color='info'>แก้ไขบทความ</MDBBtn></Link>
-                    <MDBBtn size='lg' color='danger' className="d-grid gap-2" onClick={() => confirmDelete(blog.slug)}>ลบบทความ</MDBBtn>
-                  </MDBBtnGroup>
-                </MDBCardFooter >
-                 )}
+                {getUser() && (
+                  <MDBCardFooter background='transparent' border='success'>
+                    <MDBBtnGroup shadow='0' className="d-grid gap-2">
+                      <Link to={`/intro/blog/edit/${blog.slug}`} className="d-grid gap-2">  <MDBBtn size='lg' color='info'>แก้ไขบทความ</MDBBtn></Link>
+                      <MDBBtn size='lg' color='danger' className="d-grid gap-2" onClick={() => confirmDelete(blog.slug)}>ลบบทความ</MDBBtn>
+                    </MDBBtnGroup>
+                  </MDBCardFooter >
+                )}
               </MDBCard>
             </MDBCol>
           ))}
