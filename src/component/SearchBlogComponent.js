@@ -10,6 +10,10 @@ function SearchBlogComponent() {
   const [getBlogs, setBlogs] = useState([])
   const [filteredBlog, setFilteredData] = useState(getBlogs);
 
+  const [query, setQuery] = useState("");
+  const keyword = () => {
+    console.log(query);
+  };
 
   const fetchData = () => {
     axios
@@ -25,6 +29,7 @@ function SearchBlogComponent() {
     let value = event.target.value.toLowerCase();
     let result = [];
     console.log(value);
+    
     result = getBlogs.filter((data) => {
       return data.title.search(value) != -1;
     });
@@ -129,9 +134,13 @@ function SearchBlogComponent() {
                     </Link></MDBCardTitle>
                   <MDBCardText>
                     
-                  <p><small className='text-muted'>Tag : {(blog.tags) + ("")}</small>
+                  <p><small className='text-muted'><span className="fw-bold fs-6">Tag : </span> {blog.tags.map((tag, idTag) =>
+                         
+                         <Link  onClick={() => setQuery(getBlogs[index].tags[idTag])}  onClick={keyword}><span >{" " + tag + ","}</span></Link >
+                       
+                     )}</small>
                     </p>
-
+                   
                     <div>{renderHTML(blog.content.substring(0, 250) + "...")}</div>
 
                   </MDBCardText>
