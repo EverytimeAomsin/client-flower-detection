@@ -89,17 +89,17 @@ function SearchBlogComponent() {
         <MDBRow className='mt-4'>
           <h3 className='Kanit-regular'>หัวข้อที่อาจสนใจ</h3>
           <MDBCol md='3' className='col-example d-grid gap-2 '>
-            <MDBBtn size='lg' outline className='mx-2 ' color='dark' onClick={(event) => handleSearch(event)} value="ชบา">
+            <MDBBtn size='lg' outline className='mx-2 ' color='danger' onClick={(event) => handleSearch(event)} value="ชบา">
               สีแดง
             </MDBBtn>
           </MDBCol>
           <MDBCol md='3' className='col-example d-grid gap-2 mt-tag'>
-            <MDBBtn size='lg' outline className='mx-2' color='dark'> 
+            <MDBBtn size='lg' outline className='mx-2' color='secondary'> 
               สีเหลือง
             </MDBBtn>
           </MDBCol>
           <MDBCol md='3' className='col-example d-grid gap-2 mt-tag'>
-            <MDBBtn size='lg' outline className='mx-2' color='dark'>
+            <MDBBtn size='lg' outline className='mx-2' color='secondary'>
               สีส้ม
             </MDBBtn>
           </MDBCol>
@@ -136,12 +136,12 @@ function SearchBlogComponent() {
                     </Link></MDBCardTitle>
                   <MDBCardText>
                     
-                  <p><small className='text-muted'><span className="fw-bold fs-6">Tag : </span> {blog.tags.map((tag, idTag) =>
+                  {/* <p><small className='text-muted'><span className="fw-bold fs-6">Tag : </span> {blog.tags.map((tag, idTag) =>
                          
                          <Link  onClick={() => setQuery(getBlogs[index].tags[idTag])}  onClick={keyword}><span >{" " + tag + ","}</span></Link >
                        
                      )}</small>
-                    </p>
+                    </p> */}
                    
                     <div>{renderHTML(blog.content.substring(0, 250) + "...")}</div>
 
