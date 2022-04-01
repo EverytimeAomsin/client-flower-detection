@@ -94,12 +94,12 @@ function SearchBlogComponent() {
             </MDBBtn>
           </MDBCol>
           <MDBCol md='3' className='col-example d-grid gap-2 mt-tag'>
-            <MDBBtn size='lg' outline className='mx-2' color='secondary'> 
+            <MDBBtn size='lg' outline className='mx-2' color='warning'> 
               สีเหลือง
             </MDBBtn>
           </MDBCol>
           <MDBCol md='3' className='col-example d-grid gap-2 mt-tag'>
-            <MDBBtn size='lg' outline className='mx-2' color='secondary'>
+            <MDBBtn size='lg' outline className='mx-2' style={{color:'FFA726'}}>
               สีส้ม
             </MDBBtn>
           </MDBCol>
