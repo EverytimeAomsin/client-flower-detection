@@ -64,7 +64,7 @@ export default function Blog(props) {
             {renderHTML(blog.intro)}</p>
 
             <h4 className='Kanit-regular mt-5 head-blog'>ลักษณะทั่วไป</h4>
-            <p className='mt-3 lightfont'>
+            <p className='mt-3 '>
             {renderHTML(blog.content)}</p>
 
             <h4 className='Kanit-regular mt-5 head-blog'>สรรพคุณ</h4>

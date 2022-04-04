@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { MDBContainer } from 'mdb-react-ui-kit';
+import { MDBContainer,MDBFile  } from 'mdb-react-ui-kit';
 import { Link } from "react-router-dom";
 import '../../css/Scan.css'
 import SearchBox from '../../component/SearchBox'
@@ -7,6 +7,9 @@ import Preview from '../../component/Preview'
 
 function Scan() {
   const [searchState, setSearchState] = useState("");
+
+ 
+  
   return (
     <div>
       <MDBContainer fluid className='BG-intro'>
@@ -20,6 +23,10 @@ function Scan() {
           <Preview searchState={searchState}></Preview>
         </MDBContainer>
        
+      </MDBContainer>
+
+      <MDBContainer>
+      <MDBFile label='Default file input example' id='customFile' />
       </MDBContainer>
     </div>
   );
