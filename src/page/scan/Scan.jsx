@@ -5,8 +5,9 @@ import '../../css/Scan.css'
 import SearchBox from '../../component/SearchBox'
 import Preview from '../../component/Preview'
 
+
 function Scan() {
-  const [searchState, setSearchState] = useState("");
+  const [searchState, setSearchState] = useState("https://cdn.discordapp.com/attachments/556546837247426635/960659803980578896/img.jpg");
 
  
   
@@ -25,9 +26,8 @@ function Scan() {
        
       </MDBContainer>
 
-      <MDBContainer>
-      <MDBFile label='Default file input example' id='customFile' />
-      </MDBContainer>
+
+      
     </div>
   );
 }

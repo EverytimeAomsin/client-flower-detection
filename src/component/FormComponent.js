@@ -12,6 +12,7 @@ const FormComponent = () => {
         title: "",
         intro: "",
         properties: "",
+        healing: "",
         author: getUser()
     })
     const { title, author } = state
@@ -19,6 +20,7 @@ const FormComponent = () => {
     const [content, setContent] = useState('')
     const [intro, setIntro] = useState('')
     const [properties, setProperties] = useState('')
+    const [healing, setHealing] = useState('')
 
     //กำหนดค่าให้กับ state
     const inputValue = name => event => {
@@ -33,13 +35,16 @@ const FormComponent = () => {
     const submitProperties = (event) => {
         setProperties(event)
     }
+    const submitHealing = (event) => {
+        setHealing(event)
+    }
 
     const submitForm = (e) => {
         e.preventDefault();
         console.log("API URL = ", process.env.REACT_APP_API)
         axios
             .post(`${process.env.REACT_APP_API}/create`,
-                { title,intro, content,properties, author },
+                { title, intro, content, properties, author },
                 {
                     headers: {
                         authorization: `Bearer ${getToken()}`
@@ -92,7 +97,7 @@ const FormComponent = () => {
                         <form onSubmit={submitForm}>
                             <div className='d-flex justify-content-center margin-imgblog'>
                                 <div>
-                                    <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZBZgpadvnLQBPqEzSM5yQ32yOUqH5tGtEFKpGIiqQ8ReSGPQHn-N8XvxAjHoZ9lBFu_g&usqp=CAU' style={{ width:'600px' }} className='img-fluid shadow-4' alt='...' />
+                                    <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZBZgpadvnLQBPqEzSM5yQ32yOUqH5tGtEFKpGIiqQ8ReSGPQHn-N8XvxAjHoZ9lBFu_g&usqp=CAU' style={{ width: '600px' }} className='img-fluid shadow-4' alt='...' />
                                     <p class="note note-light mt-3">
                                         <strong>Note:</strong> ไม่มีระบบ<strong> อัพรูป</strong> ให้ไปเพิ่มที่ database เอง
                                     </p>
@@ -138,9 +143,22 @@ const FormComponent = () => {
                                 placeholder="เขียนรายละเอียดบทความของคุณ"
                                 style={{ border: '1px solid #666' }}
                             />
+
+                            <h4 className='Kanit-regular mt-5 head-blog'>วิธีการดูแลรักษา</h4>
+                            <label>รายละเอียด</label>
+                            <ReactQuill
+                                value={healing}
+                                onChange={submitHealing}
+                                theme="snow"
+                                className="pb-5 mb-3 bg-white"
+                                placeholder="เขียนรายละเอียดบทความของคุณ"
+                                style={{ border: '1px solid #666' }}
+                            />
+
+
                             <input type="submit" value="บันทึก" className="btn btn-primary" />
                         </form>
-                        <div style={{height:'40px'}}></div>
+                        <div style={{ height: '40px' }}></div>
                     </MDBCol>
 
                     <MDBCol md='2' className='col-example'>

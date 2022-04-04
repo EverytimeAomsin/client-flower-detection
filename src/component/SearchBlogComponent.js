@@ -11,6 +11,8 @@ function SearchBlogComponent() {
   const [filteredBlog, setFilteredData] = useState(getBlogs);
 
   const [query, setQuery] = useState("");
+  const [tag, setTag] = useState("");
+  const [search, setSearch] = useState("");
   const keyword = () => {
     console.log(query);
   };
@@ -33,8 +35,24 @@ function SearchBlogComponent() {
     result = getBlogs.filter((data) => {
       return data.title.search(value) != -1;
     });
+    setSearch(value);
+    setTag("")
     setFilteredData(result);
     console.log(result);
+  }
+
+  const handleSearch2 = (event) => {
+    let value = event.target.value.toLowerCase();
+    let result2 = [];
+    console.log(value);
+    
+    result2 = getBlogs.filter((data) => {
+      return data.tag.search(value) != -1;
+    });
+    setFilteredData(result2);
+    setSearch("");
+    setTag(value)
+    console.log(result2);
   }
 
   useEffect(() => {
@@ -77,7 +95,15 @@ function SearchBlogComponent() {
         <MDBCol md='3' className='col-example'>
         </MDBCol>
         <MDBCol md='5' className='col-example'>
-          <MDBInput style={{ width: '500px' }} className='mt-5 sticky-top' size='lg' label='ค้นหา >>' id='form1' type='text' onChange={(event) => handleSearch(event)}  />
+          <MDBRow className="mt-5">
+        <MDBCol size='8' className='col-example'>
+        <MDBInput  className=' sticky-top' size='lg' label='ค้นหา >>' id='form1' type='text' onChange={(event) => handleSearch(event)}  />
+        </MDBCol>
+        <MDBCol size='4' className='col-example'>
+        <MDBBtn onClick={(event) => handleSearch(event)} value="">เคลียร์คำค้นหา X</MDBBtn>
+        </MDBCol>
+      </MDBRow>
+      <MDBInput   size='sm' label={"คำที่ค้นหา :" +tag + search} id='formControlDisabled' type='text' onChange={(event) => handleSearch2(event)}   disabled />
           <div id='textExample1' className='form-text'>
             ช่องค้นหา คุณสามารถค้นหาสิ่งที่คุณต้องการได้
           </div>
@@ -89,7 +115,7 @@ function SearchBlogComponent() {
         <MDBRow className='mt-4'>
           <h3 className='Kanit-regular'>หัวข้อที่อาจสนใจ</h3>
           <MDBCol md='3' className='col-example d-grid gap-2 '>
-            <MDBBtn size='lg' outline className='mx-2 ' color='danger' onClick={(event) => handleSearch(event)} value="ชบา">
+            <MDBBtn size='lg' outline className='mx-2 ' color='danger' onClick={(event) => handleSearch2(event)} value="แดง">
               สีแดง
             </MDBBtn>
           </MDBCol>
@@ -99,7 +125,7 @@ function SearchBlogComponent() {
             </MDBBtn>
           </MDBCol>
           <MDBCol md='3' className='col-example d-grid gap-2 mt-tag'>
-            <MDBBtn size='lg' outline className='mx-2' style={{color:'FFA726'}}>
+            <MDBBtn size='lg' outline className='mx-2' color="oj">
               สีส้ม
             </MDBBtn>
           </MDBCol>
