@@ -10,6 +10,7 @@ const Preview = ({ searchState }) => {
 
   const handlePredict = function () {
     if (searchState === "") {
+
       return;
     }
 
@@ -35,7 +36,7 @@ const Preview = ({ searchState }) => {
           console.log("Something went wrong!");
         } else {
           response.json().then((data) => {
-            debugger;
+            // debugger;
             setPredictedData({
               Flower: data[0].class,
               Probability: data[0].score,

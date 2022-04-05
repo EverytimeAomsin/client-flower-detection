@@ -45,6 +45,7 @@ const SearchBox = ({ setSearchState }) => {
           .then(url => {
             setUrl(url)
             setInputUrl(url)
+            setSearchState(url)
           });
       }
     );
