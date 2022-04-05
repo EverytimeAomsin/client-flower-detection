@@ -3,13 +3,13 @@ import "firebase/storage";
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyDDi61lmfItyfpFIAPPK2o9lE2XSVWdJLs",
-  authDomain: "flower-detection-1f5df.firebaseapp.com",
-  projectId: "flower-detection-1f5df",
-  storageBucket: "flower-detection-1f5df.appspot.com",
-  messagingSenderId: "773217866114",
-  appId: "1:773217866114:web:8b57afdc55d45460afbf9b",
-  measurementId: "G-XLNYYYPM1C"
+  apiKey: "AIzaSyDW7-hQVvWDm4rvOIuAf4UquUaHFWAA4qQ",
+  authDomain: "flower-detection-ad21f.firebaseapp.com",
+  projectId: "flower-detection-ad21f",
+  storageBucket: "flower-detection-ad21f.appspot.com",
+  messagingSenderId: "43085399199",
+  appId: "1:43085399199:web:86c2b70200ead359388eaa",
+  measurementId: "G-SWSXL1XES4"
 };
 
 firebase.initializeApp(firebaseConfig);

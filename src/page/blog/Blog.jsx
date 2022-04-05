@@ -44,7 +44,7 @@ export default function Blog(props) {
     </nav>
       <MDBContainer>
       {blog && 
-        <MDBRow>
+        <MDBRow className="mt-4">
 
           <MDBCol md='2' className='col-example'>
             <div className="fixed-top sidebar">  <Link to="/intro"><img style={{ height: '50px' }} src='https://cdn.discordapp.com/attachments/556546837247426635/937082320966529095/Logo1.png' />
@@ -55,8 +55,7 @@ export default function Blog(props) {
             <div className='d-flex justify-content-center margin-imgblog'>
               <div>
                 <img src={blog.photos[0]} style={{minWidth: '450px'}} className='img-fluid shadow-4' alt='...' />
-                <h1 className='title-blog text-light '><span className='bg-dark '><span className='blog-titleML1'>Collection of flowers.</span></span></h1>
-                <h3 ><span className='bg-dark'><span className='blog-titleC blog-titleML2'>Admin</span><span className='text-light blog-titleML3'>2020 Jan 25</span>  </span></h3>
+               
               </div>
             </div>
             <h4 className='Kanit-regular mt-5 head-blog'>{blog.title}</h4>
