@@ -120,17 +120,17 @@ function SearchBlogComponent() {
             </MDBBtn>
           </MDBCol>
           <MDBCol md='3' className='col-example d-grid gap-2 mt-tag'>
-            <MDBBtn size='lg' outline className='mx-2' color='warning'> 
+            <MDBBtn size='lg' outline className='mx-2' color='warning' onClick={(event) => handleSearch2(event)} value="เหลือง" > 
               สีเหลือง
             </MDBBtn>
           </MDBCol>
           <MDBCol md='3' className='col-example d-grid gap-2 mt-tag'>
-            <MDBBtn size='lg' outline className='mx-2' color="oj">
+            <MDBBtn size='lg' outline className='mx-2' style={{color:'#FF9100',borderColor:'#FF9100'}} onClick={(event) => handleSearch2(event)} value="ส้ม">
               สีส้ม
             </MDBBtn>
           </MDBCol>
           <MDBCol md='3' className='col-example d-grid gap-2 mt-tag'>
-            <MDBBtn size='lg' outline className='mx-2' color='dark'>
+            <MDBBtn size='lg' outline className='mx-2' style={{color:'#E040FB',borderColor:'#E040FB'}} onClick={(event) => handleSearch2(event)} value="ชมพู">
               สีชมพู
             </MDBBtn>
           </MDBCol>

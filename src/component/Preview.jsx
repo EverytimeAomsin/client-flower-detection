@@ -5,7 +5,7 @@ import ShowPrediction from "./ShowPrediction";
 const Preview = ({ searchState }) => {
   const [predictedData, setPredictedData] = useState({
     Flower: "",
-    Probability: "",
+    Probability: "0",
   });
 
   const handlePredict = function () {

@@ -9,7 +9,7 @@ export default function Blog(props) {
   const [blog,setBlog] = useState('')
 
   useEffect(()=>{
-    document.title = "อ่าน "+(blog.slug)
+    document.title = "อ่าน "+(blog.title)
       axios
       .get(`${process.env.REACT_APP_API}/blog/${props.match.params.slug}`)
       .then(response=>{
@@ -70,6 +70,11 @@ export default function Blog(props) {
             <h4 className='Kanit-regular mt-5 head-blog'>สรรพคุณ</h4>
             <p className='mt-3 lightfont'>
             {renderHTML(blog.properties)}
+            </p>
+
+            <h4 className='Kanit-regular mt-5 head-blog'>วิธีการดูแลรักษา</h4>
+            <p className='mt-3 lightfont'>
+            {renderHTML(blog.healing)}
             </p>
           </MDBCol>
           <MDBCol md='2' className='col-example'>

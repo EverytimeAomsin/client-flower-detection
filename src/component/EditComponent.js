@@ -18,6 +18,8 @@ const EditComponent=(props)=>{
     const [content,setContent] = useState('')
     const [intro, setIntro] = useState('')
     const [properties, setProperties] = useState('')
+    const [healing, setHealing] = useState('')
+    const [tag, setTag] = useState('')
 
     const submitIntro = (event) => {
         setIntro(event)
@@ -28,6 +30,12 @@ const EditComponent=(props)=>{
     const submitProperties = (event) => {
         setProperties(event)
     }
+    const submitHealing = (event) => {
+        setHealing(event)
+    }
+    const submitTag = (event) => {
+        setTag(event)
+    }
 
     //ดึงข้อมูลบทความที่ต้องการแก้ไข
     useEffect(()=>{
@@ -35,11 +43,13 @@ const EditComponent=(props)=>{
         axios
         .get(`${process.env.REACT_APP_API}/blog/${props.match.params.slug}`)
         .then(response=>{
-            const {title,intro,content,properties,author,slug} = response.data
+            const {title,intro,content,properties,healing,tag,author,slug} = response.data
             setState({...state,title,author,slug})
             setIntro(intro)
             setContent(content)
             setProperties(properties)
+            submitHealing(healing)
+            submitTag(tag)
         })
         .catch(err=>props.history.push("/404NotFound"))
         // eslint-disable-next-line
@@ -79,6 +89,26 @@ const EditComponent=(props)=>{
                     <ReactQuill 
                         value={properties}
                         onChange={submitProperties}
+                        theme="snow"
+                        className="pb-5 mb-3"
+                        style={{border:'1px solid #666'}}
+                    />
+                </div>
+                <div className="form-group">
+                    <label>วิธีการดูแลรักษา</label>
+                    <ReactQuill 
+                        value={healing}
+                        onChange={submitHealing}
+                        theme="snow"
+                        className="pb-5 mb-3"
+                        style={{border:'1px solid #666'}}
+                    />
+                </div>
+                <div className="form-group">
+                    <label>แท็ก Tag</label>
+                    <ReactQuill 
+                        value={tag}
+                        onChange={submitTag}
                         theme="snow"
                         className="pb-5 mb-3"
                         style={{border:'1px solid #666'}}

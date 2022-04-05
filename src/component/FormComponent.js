@@ -21,6 +21,7 @@ const FormComponent = () => {
     const [intro, setIntro] = useState('')
     const [properties, setProperties] = useState('')
     const [healing, setHealing] = useState('')
+    const [tag, setTag] = useState('')
 
     //กำหนดค่าให้กับ state
     const inputValue = name => event => {
@@ -39,12 +40,16 @@ const FormComponent = () => {
         setHealing(event)
     }
 
+    const submitTag = (event) => {
+        setTag(event)
+    }
+
     const submitForm = (e) => {
         e.preventDefault();
         console.log("API URL = ", process.env.REACT_APP_API)
         axios
             .post(`${process.env.REACT_APP_API}/create`,
-                { title, intro, content, properties, author },
+                { title, intro, content, properties,healing,tag, author },
                 {
                     headers: {
                         authorization: `Bearer ${getToken()}`
@@ -55,6 +60,7 @@ const FormComponent = () => {
                 Swal.fire('แจ้งเตือน', "บันทึกข้อมูลบทความเรียบร้อย", 'success')
                 setState({ ...state, title: "", author: "" })
                 setContent("")
+                window.location.reload();
             })
             .catch(err => {
                 Swal.fire('แจ้งเตือน', err.response.data.error, 'error')
@@ -145,7 +151,6 @@ const FormComponent = () => {
                             />
 
                             <h4 className='Kanit-regular mt-5 head-blog'>วิธีการดูแลรักษา</h4>
-                            <label>รายละเอียด</label>
                             <ReactQuill
                                 value={healing}
                                 onChange={submitHealing}
@@ -154,8 +159,15 @@ const FormComponent = () => {
                                 placeholder="เขียนรายละเอียดบทความของคุณ"
                                 style={{ border: '1px solid #666' }}
                             />
-
-
+                             <h4 className='Kanit-regular mt-5 head-blog'>แท็ก Tag</h4>
+                            <ReactQuill
+                                value={tag}
+                                onChange={submitTag}
+                                theme="snow"
+                                className="pb-5 mb-3 bg-white"
+                                placeholder="เขียนรายละเอียดบทความของคุณ"
+                                style={{ border: '1px solid #666' }}
+                            />
                             <input type="submit" value="บันทึก" className="btn btn-primary" />
                         </form>
                         <div style={{ height: '40px' }}></div>

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { MDBInput, MDBContainer, MDBFile ,MDBRow, MDBCol,MDBBtn  } from 'mdb-react-ui-kit';
 
-import { storage } from "../firebase/index"
+import { storage } from "../services/firebase"
 
 const SearchBox = ({ setSearchState }) => {
   const [inputUrl, setInputUrl] = useState("");

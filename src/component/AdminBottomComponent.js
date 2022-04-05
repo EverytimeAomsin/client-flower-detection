@@ -35,7 +35,7 @@ export default function AdminBottomComponent(history) {
                         <MDBModalBody>
                             <div class="d-grid gap-2">
                                 <MDBBtn size='lg' href='/create'>เพิ่มบทความ &nbsp;&nbsp; &nbsp;&nbsp;<MDBIcon fas icon="pen" /></MDBBtn>
-                                <MDBBtn size='lg' color='danger'  onClick={()=>logout(()=>history.push("/"))}>ออกจากระบบ  &nbsp;&nbsp; <MDBIcon fas icon="sign-out-alt" /></MDBBtn>
+                                <MDBBtn size='lg' color='danger'  onClick={()=>logout(()=>window.location.reload())}>ออกจากระบบ  &nbsp;&nbsp; <MDBIcon fas icon="sign-out-alt" /></MDBBtn>
                             </div>
                         </MDBModalBody>
                     </MDBModalContent>
