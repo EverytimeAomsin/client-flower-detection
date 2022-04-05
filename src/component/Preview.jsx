@@ -10,7 +10,6 @@ const Preview = ({ searchState }) => {
 
   const handlePredict = function () {
     if (searchState === "") {
-
       return;
     }
 

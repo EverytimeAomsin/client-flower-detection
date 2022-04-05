@@ -127,7 +127,7 @@ const EditComponent=(props)=>{
         e.preventDefault();
         console.log("API URL = ",process.env.REACT_APP_API)
         axios
-        .put(`${process.env.REACT_APP_API}/blog/${slug}`,{title,content,author},
+        .put(`${process.env.REACT_APP_API}/blog/${slug}`,{title,intro,content,properties,healing,tag,author},
         {
             headers:{
                 authorization:`Bearer ${getToken()}`
@@ -135,9 +135,13 @@ const EditComponent=(props)=>{
         })
         .then(response=>{
             Swal.fire('แจ้งเตือน',"อัพเดตบทความเรียบร้อย",'success')
-            const {title,content,author,slug} = response.data
+            const {title,intro,content,properties,healing,tag,author,slug} = response.data
             setState({...state,title,author,slug})
             setContent(content)
+            setIntro(intro)
+            setProperties(properties)
+            setHealing(healing)
+            setTag(tag)
         })
         .catch(err=>{
             alert(err)
